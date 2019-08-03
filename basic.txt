@@ -1,0 +1,7 @@
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=28668abd94c070
+MAIL_PASSWORD=8f3c8fc5e8ad6c
+MAIL_FROM_ADDRESS=test@laravel.com
+MAIL_FROM_NAME=test_laravel

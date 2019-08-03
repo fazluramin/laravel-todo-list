@@ -1,4 +1,5 @@
 <?php
+use NunoMaduro\Collision\Provider;
 
 return [
 
@@ -44,9 +45,29 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-            'hash' => false,
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        
+        'user_api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ]
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -68,8 +89,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\Users::class,
         ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => 'App\Models\User::class',
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
